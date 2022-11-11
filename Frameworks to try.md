@@ -1,20 +1,3 @@
-
-<div class="rich-link-card-container"><a class="rich-link-card" href="https://quasar.dev" target="_blank">
-	<div class="rich-link-image-container">
-		<div class="rich-link-image" style="background-image: url('https://cdn.quasar.dev/logo-v2/social-cover.jpg')">
-	</div>
-	</div>
-	<div class="rich-link-card-text">
-		<h1 class="rich-link-card-title">Quasar Framework - Build high-performance VueJS user interfaces in record time</h1>
-		<p class="rich-link-card-description">
-		Developer-oriented, front-end framework with VueJS components for best-in-class high-performance, responsive websites, PWA, SSR, Mobile and Desktop apps, all from the same codebase. Sensible people choose Vue. Productive people choose Quasar. Be both.
-		</p>
-		<p class="rich-link-href">
-		https://quasar.dev
-		</p>
-	</div>
-</a></div>
-
 <div class="rich-link-card-container"><a class="rich-link-card" href="https://astro.build" target="_blank">
 	<div class="rich-link-image-container">
 		<div class="rich-link-image" style="background-image: url('https://astro.build/assets/social.4df01cf6_Z1jhpsT.jpeg')">
@@ -43,6 +26,24 @@
 		</p>
 		<p class="rich-link-href">
 		https://qwik.builder.io
+		</p>
+	</div>
+</a></div>
+
+# React Native styling
+
+<div class="rich-link-card-container"><a class="rich-link-card" href="https://www.nativewind.dev/" target="_blank">
+	<div class="rich-link-image-container">
+		<div class="rich-link-image" style="background-image: url('https://www.nativewind.dev/img/favicon.ico')">
+	</div>
+	</div>
+	<div class="rich-link-card-text">
+		<h1 class="rich-link-card-title">Home | NativeWind</h1>
+		<p class="rich-link-card-description">
+		NativeWind uses Tailwind CSS as scripting language to create a universal style system for React Native. NativeWind components can be shared between platforms and will output their styles as CSS StyleSheet on web and StyleSheet.create for native.
+		</p>
+		<p class="rich-link-href">
+		https://www.nativewind.dev/
 		</p>
 	</div>
 </a></div>
