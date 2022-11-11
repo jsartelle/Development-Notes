@@ -1,5 +1,11 @@
 # Composition API
 
+```html
+<script setup lang="ts">
+// code goes here!
+</script>
+```
+
 ## Why use composition?
 
 > [!important] The Composition API is recommended over mixins.
@@ -883,6 +889,18 @@ const AsyncComp = defineAsyncComponent({
             Loading...
           </template>
 <!-- close everything -->
+```
+
+# Router
+
+- to access the router in a `script setup` component
+    - you can still use `$route` in the template
+
+```js
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 ```
 
 # Stores (Pinia)
