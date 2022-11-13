@@ -664,6 +664,7 @@ const modal = ref<InstanceType<typeof MyModal> | null>(null)
 ### Reactive
 
 - `reactive` objects also have inferred types, or can be typed using interfaces
+    - don't use the generic argument for `reactive`
 
 ```ts
 interface Book {
