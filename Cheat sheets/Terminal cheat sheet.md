@@ -240,6 +240,13 @@ echo $result[2]
     - `-n`: dry run
 - rsync uses modification times to sync only changed files
 
+## npm
+
+- `npm list`: list installed packages (useful for [[#grep]]ping)
+    - `-g`: global
+    - `-a`: include nested dependencies
+    - `-l`: include descriptions
+
 ## ffmpeg
 
 - `ffmpeg -i input.mp4 -ss 00:01:40 -to 00:02:16 -c copy output.mp4`: trim to between 1m:40s and 2m:16s
@@ -260,7 +267,7 @@ echo $result[2]
 - pipe JSON (ex. from `curl`) into `jq` with no arguments to pretty-print
 - `jq -s '.[0] * .[1]' --indent 4 old.json patch.json > new.json`: recursively merge *patch.json* into *old.json*
 
-## Pandoc
+## pandoc
 
 - basic conversion
 
