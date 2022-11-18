@@ -87,11 +87,11 @@
 
 # Form Input Bindings
 
-## Automatically trim whitespace from `v-model` inputs
+## `v-model` modifiers
 
-```html
-<input v-model.trim="msg" />
-```
+- `.trim`: trim input
+- `.lazy`: only update on `change` events
+- `.number`: cast string to number (or use `type="number"`)
 
 ## Bind multiple checkboxes to an array
 

@@ -14,4 +14,7 @@ aliases: Pull request checklist
     - handle missing env/config keys
 - add `break` in switch statements
 - use optional chaining (`?.`) where appropriate
-- correct use of `this` in Vue
+- usage of `this` in Vue:
+    - `<script>` (options API): yes
+    - `<template>`: no
+    - `.js` files: not usually
