@@ -159,6 +159,14 @@ SET
     END
 ```
 
+## DESCRIBE
+
+- prints a table's schema
+
+```sql
+DESCRIBE database.users
+```
+
 ## Transactions
 
 - running scripts in a transaction lets you test & roll back changes

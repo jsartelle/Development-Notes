@@ -1,4 +1,3 @@
-
 > [!warning]
 > Remember that `array.sort` and `array.reverse` mutate the original array!
 
@@ -53,12 +52,30 @@ test2({})                              // undefineds are undefined
 test2()                                // bananas are yellow
 ```
 
-## Media queries
+## Measure timings in console
+
+- `timeLog` and `timeEnd` both log elapsed time to the console (`timeLog` is optional)
+- timer name must match between calls
+    - prefix with something like `[timer]` to make it easier to search for
 
 ```js
-const mediaQuery = window.matchMedia("(orientation: portrait)")
-const isPortrait = mediaQuery.matches
-mediaQuery.addEventListener('change', adjustLayout)
+function longRunningFunction() {
+    const timerName = '[timer] longRunningFunction'
+    console.time(timerName)
+    doSomething()
+    console.timeLog(timerName)
+    doSomethingElse()
+    console.timeEnd(timerName)
+}
+```
+
+## String.replace Function
+
+```js
+string.replace(/%%(\w+)%%/, (match, p1, p2 /*...pN*/, offset, string, groups) => {
+    // groups is an object of named capturing groups
+    return replacement
+})
 ```
 
 ## Generate random string
@@ -69,19 +86,18 @@ mediaQuery.addEventListener('change', adjustLayout)
 (Math.random() + 1).toString(36).substring(2)
 ```
 
-## String.replace function
-
-```js
-string.replace(/%%(\w+)%%/, (match, p1, p2 /*...pN*/, offset, string, groups) => {
-    // groups is an object of named capturing groups
-    return replacement
-})
-```
-
 ## Copy text to clipboard
 
 ```js
 await navigator.clipboard.writeText('text')
+```
+
+## Media queries
+
+```js
+const mediaQuery = window.matchMedia("(orientation: portrait)")
+const isPortrait = mediaQuery.matches
+mediaQuery.addEventListener('change', adjustLayout)
 ```
 
 ## Resize observer

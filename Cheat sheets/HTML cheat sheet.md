@@ -5,3 +5,7 @@ The **`load`** event is fired when the whole page has loaded, including all de
 The **`DOMContentLoaded`** event fires when the HTML document has been completely parsed, and all deferred scripts (`<script defer src="…">` and `<script type="module">`) have downloaded and executed. It doesn't wait for other things like images, subframes, and async scripts to finish loading.
 
 `DOMContentLoaded` does not wait for stylesheets to load, however deferred scripts *do* wait for stylesheets, and `DOMContentLoaded` queues behind deferred scripts. Also, scripts which aren't deferred or async (e.g. `<script>`) will wait for already-parsed stylesheets to load.
+
+# See also
+
+- [[Everything I Know About The Script Tag]]

@@ -164,9 +164,9 @@ echo $result[2]
 
 - `grep 'word' filename`
     - filename can also be a directory or pattern, like `.` or `*.js`
-    - `fgrep` (or `grep -F`) is faster but finds only fixed patterns (not regexp)
-    - `egrep` (or `grep -E`) handles extended regular expressions
-    - `grep -P` uses Perl-style regexps (allows things like look-around assertions)
+    - `grep -F` (or `fgrep`) is faster but finds only fixed patterns (not regexp)
+    - `grep -E` (or `egrep`) handles extended regular expressions
+    - `grep -P` uses Perl-style regexps (allows things like [[Regex cheat sheet#Lookarounds|look-around assertions]])
 - `-i`: case insensitive
 - `-w`: whole word matches
 - `-v`: invert match (match only lines that do not contain the word)

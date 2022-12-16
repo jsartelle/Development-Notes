@@ -1002,6 +1002,6 @@ p {
 - target slotted content (in the child component) using `::v-slotted()`
 - apply global rules in scoped style blocks using `::v-global()`
 
-# See Also
+# See also
 
 - [[Vue cheat sheet]]

@@ -1,47 +1,93 @@
-# Configuration
+# Tuples
 
-- `strict`: enables much stricter type checking
+```ts
+type NameAndAge = [string, number]
 
-## TypeScript ESLint
-
-- `no-floating-promises`: warns if you forget to await an async function
-- `no-misused-promises`: warns if you use Promises in locations that don't make sense
+const person: NameAndAge = ['Bob', 42]
+const [name, age] = person
+```
 
 # Types vs. Interfaces
 
-## Extending types
+> [!tip]
+> Prefer interfaces when possible
+
+- interfaces can have fields [[#Declaration merging|added to them after creation]], types can't
+- interface names show up in error messages more consistently
+
+# Type Manipulation
+
+## Intersection types
 
 ```ts
-type Foo = {
-  a: number
-}
+type Foo = { a: number }
+interface Bar { b: number }
 
-type Bar = {
-  b: number
-}
-
+// you can combine types (including object literals) & interfaces, and the result will be a type
 type Baz = Foo & Bar & {
   c: number
 }
 ```
 
+- properties with the same name and different object types are merged
+
+```ts
+type Foo = { x: { y: number } }
+type Bar = { x: { z: string } }
+
+type Baz = Foo & Bar
+
+const x: Baz = { x: { y: 123, z: 'abc' } }
+```
+
 ## Extending interfaces
 
 ```ts
-interface Foo {
-  a: number
-}
-
-interface Bar {
-  b: number
-}
+interface Foo { a: number }
+interface Bar { b: number }
 
 interface Baz extends Foo, Bar {
   c: number
 }
 ```
 
-# Examples
+- properties with the same name and different object types cause an error
+
+```ts
+interface Foo { x: { y: number } }
+interface Bar { x: { z: string } }
+
+interface Baz extends Foo, Bar // error: Named property 'x' of types 'Foo' and 'Bar' are not identical
+```
+
+## Declaration merging
+
+used to add new properties to an existing interface
+
+```ts
+interface Book {
+  title: string
+  author: string
+}
+
+interface Book {
+  year: number
+}
+```
+
+### Add properties to `window`
+
+```ts
+// {filename}.d.ts
+export {}
+
+declare global {
+	interface Window {
+		foo: string
+	}
+}
+
+```
 
 ## Combine types (intersection type)
 
@@ -122,6 +168,15 @@ type PickByType<T, Value> = {
   [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P]
 }
 ```
+
+# Configuration
+
+- `strict`: enables much stricter type checking
+
+## TypeScript ESLint
+
+- `no-floating-promises`: warns if you forget to await an async function
+- `no-misused-promises`: warns if you use Promises in locations that don't make sense
 
 # See also
 

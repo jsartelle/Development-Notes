@@ -1,4 +1,3 @@
-
 > [!warning]
 > - props default to optional unless `required: true` is specified!
 > - computed property getters should not have side effects!
@@ -87,7 +86,7 @@
 
 # Form Input Bindings
 
-## `v-model` modifiers
+## `v-model` Modifiers
 
 - `.trim`: trim input
 - `.lazy`: only update on `change` events
@@ -182,7 +181,35 @@ const props = {
 </KeepAlive>
 ```
 
-# vue-meta (Nuxt)
+# TypeScript
+
+## With `defineComponent`
+
+```ts
+import Axios from 'axios'
+
+// on Vue 3 may only need "declare module 'vue'"
+declare module '@vue/runtime-core' {
+	interface ComponentCustomProperties {
+		$axios: Axios
+	}
+}
+```
+
+## Without `defineComponent`
+
+```ts
+import Vue from 'vue'
+import Axios from 'axios'
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $axios: Axios
+  }
+}
+```
+
+# Vue-meta (Nuxt)
 
 ## Load scripts per-page
 
@@ -199,6 +226,6 @@ head() {
 },
 ```
 
-# See Also
+# See also
 
-[[Vue 3 cheat sheet]]
+- [[Vue 3 cheat sheet]]
