@@ -1,18 +1,38 @@
-#todo look into [gap](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
+#todo write about [[The Future of CSS Cascade Layers (CSS @layer)|layers]]
 
-#todo add info on [:has](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+# Selectors
 
-#todo add stuff about [[The Future of CSS Cascade Layers (CSS @layer)|layers]]
+## :has
 
-# Animation shorthand
-
-**duration** | **easing-function** | **delay** | **iteration-count** | **direction** | **fill-mode** | **play-state** | **name**
+- lets you target elements based on their children or subsequent elements
 
 ```css
-animation: 3s ease-in 1s infinite reverse both running slidein;
+div:has(+ span) {
+    /* matches divs immediately followed by a span */
+}
+
+div:has(> span) {
+    /* matches divs containing a span */
+}
 ```
 
-# Attribute selectors
+## :is
+
+- matches any element that can be matched by any of its arguments
+- takes the specificity of its most specific argument
+- invalid arguments are ignored
+
+```css
+:is(ol, ul) :is(ol, ul, :banana /* invalid selector is ignored */) {
+    /* matches any nested list, ordered or unordered */
+}
+```
+
+## :where
+
+- same as [[#:is]] but with specificity 0
+
+## Attribute selectors
 
 | Operator | Meaning                                                                           |
 | -------- | --------------------------------------------------------------------------------- |
@@ -23,7 +43,21 @@ animation: 3s ease-in 1s infinite reverse both running slidein;
 | \*=      | contains *value*                                                                  |
 | [... i]  | case insensitive                                                                  |
 
-# Font weights
+# Properties
+
+## Gap
+
+- sets spacing between rows and columns in flex or grid views
+
+```css
+/* first value is gap between rows, second is gap between columns */
+/* if only one value is given, it applies to both */
+gap: 10px 5px;
+```
+
+# Other
+
+## Font weights
 
 | Value | Common weight name        |
 | ----- | ------------------------- |
@@ -37,6 +71,14 @@ animation: 3s ease-in 1s infinite reverse both running slidein;
 | 800   | Extra Bold (Ultra Bold)   |
 | 900   | Black (Heavy)             |
 | 950   | Extra Black (Ultra Black) |
+
+# Animation shorthand
+
+**duration** | **easing-function** | **delay** | **iteration-count** | **direction** | **fill-mode** | **play-state** | **name**
+
+```css
+animation: 3s ease-in 1s infinite reverse both running slidein;
+```
 
 # See also
 
