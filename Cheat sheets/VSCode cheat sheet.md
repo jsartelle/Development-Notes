@@ -7,22 +7,28 @@ aliases: Visual Studio Code cheat sheet
 # Keyboard Shortcuts
 
 > [!attention]
-> Some of these aren't default!
+> Shortcuts in **bold** aren't default and might require extensions
 
-| Shortcut | Action                                  |
-| -------- | --------------------------------------- |
-| ⌘G       | Find next                               |
-| ⌘D       | Select next occurrence of selected text |
-| ⇧⌘L      | Select all occurrences of selected text |
-| ⌘U       | Undo cursor move                        |
-| ⌘K ⌘Q    | Move to last edit position              |
-| ⌃⇧⌘←/→   | Contract/expand current selection       |
-| ⌘K ⌘L    | Toggle folding                          |
-| ⌘K ⌘,    | Create manual folding range             |
-| ⌘K ⌘.    | Remove manual folding ranges            |
-| ⇧⌘K      | Delete current line                     |
-| ⌘ Enter  | Insert line below                       |
-| ⌘K F     | Focus selection                         |
+| Shortcut   | Action                                    |
+| ---------- | ----------------------------------------- |
+| ⌘G         | Find next                                 |
+| ⌃⌥←/→      | Move between word parts (add ⇧ to select) |
+| ⇧⌘\\       | Jump to matching bracket                  |
+| ⇧⌥\\       | **Jump to matching HTML tag**             |
+| ⌘K ⌘Q      | Jump to last edit position                |
+| ⌘U         | Undo cursor move                          |
+| ⌘D         | Select next occurrence of selected text   |
+| ⇧⌘L        | Select all occurrences of selected text   |
+| ⌃⇧⌘←/→     | Contract/expand current selection         |
+| ⌘K F       | **Focus selection**                       |
+| ⌘K ⌘F      | Format selection                          |
+| ⌘K ⌘L      | Toggle folding                            |
+| ⌘K ⌘,      | Create manual folding range               |
+| ⌘K ⌘.      | Remove manual folding ranges              |
+| ⇧⌘Enter    | Insert line above                         |
+| ⌘Enter     | Insert line below                         |
+| ⇧⌘K        | Delete current line                       |
+| ⌃⌥Bksp/Del | Backspace/delete word parts               |
 
 # Type Checking
 
@@ -38,4 +44,4 @@ aliases: Visual Studio Code cheat sheet
 }
 ```
 
-- and add globals to `globals.d.ts` somewhere in the project
+- add globals to `globals.d.ts` somewhere in the project

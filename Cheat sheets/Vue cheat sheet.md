@@ -110,9 +110,9 @@
 <label for="mike">Mike</label>
 ```
 
-## Provide checkbox string values using `true-value` and `false-value`
+## Provide checkbox values using `true-value` and `false-value`
 
-- can also be bound to non-string types or reactive values
+- can be bound to non-string types or reactive values
 
 ```html
 <!-- `toggle` will be the string 'yes' or 'no' -->
@@ -148,7 +148,43 @@ const props = {
 <Fruit :name="props.name" :color="props.color" />
 ```
 
+## Two-way binding
+
+Vue 2:
+
+```html
+<MyComponent :name.sync="fullName" />
+```
+
+Vue 3:
+
+```html
+<MyComponent v-model:name="fullName" />
+```
+
+Both are shorthand for:
+
+```html
+<MyComponent :name="fullName" @update:name="name = $event" />
+```
+
 # Slots
+
+```html
+<!-- Component.vue -->
+<template>
+    <slot></slot>
+    <slot name=="namedSlot"></slot>
+</template>
+
+<!-- Page.vue -->
+<template>
+    <Component>
+        <div>Default slot content</div>
+        <template #namedSlot>Named slot content</template>
+    </Component>
+</template>
+```
 
 ## Bind child props to slots
 

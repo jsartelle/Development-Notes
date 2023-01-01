@@ -1,6 +1,16 @@
 #todo look into [gap](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
 
+#todo add info on [:has](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+
 #todo add stuff about [[The Future of CSS Cascade Layers (CSS @layer)|layers]]
+
+# Animation shorthand
+
+**duration** | **easing-function** | **delay** | **iteration-count** | **direction** | **fill-mode** | **play-state** | **name**
+
+```css
+animation: 3s ease-in 1s infinite reverse both running slidein;
+```
 
 # Attribute selectors
 

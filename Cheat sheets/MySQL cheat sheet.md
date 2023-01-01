@@ -6,7 +6,7 @@
 
 ## Basic query
 
-```sql
+```mysql
 SELECT
 	u.id,
 	u.name,
@@ -28,27 +28,27 @@ OFFSET 0
 
 ### Select distinct values
 
-```sql
+```mysql
 SELECT DISTINCT `name`, `phone_number` ...
 ```
 
 ### Count number of distinct values
 
-```sql
+```mysql
 SELECT COUNT(DISTINCT first_name) ...
 ```
 
 ### Group by distinct value (with count for each)
 
-```sql
-SELECT first_name, count(*)
+```mysql
+SELECT first_name, COUNT(*)
 FROM users
 GROUP BY first_name
 ```
 
 ### Select values from JSON field (JSON_EXTRACT)
 
-```sql
+```mysql
 SELECT JSON_EXTRACT(column_name, '$.version') ...
 ```
 
@@ -56,13 +56,13 @@ SELECT JSON_EXTRACT(column_name, '$.version') ...
 
 ### Pattern matching (LIKE)
 
-```sql
+```mysql
 WHERE name LIKE '%alice%'
 ```
 
 - case sensitive:
 
-```sql
+```mysql
 WHERE name LIKE BINARY '%Alice%'
 ```
 
@@ -70,13 +70,13 @@ WHERE name LIKE BINARY '%Alice%'
 
 - backslashes must be escaped
 
-```sql
+```mysql
 WHERE REGEXP_LIKE(name, '\\w+_\\d{4}_\\d{2}_\\d{2}')
 ```
 
-### List of values (WHERE IN)
+### List of values (IN)
 
-```sql
+```mysql
 WHERE name IN ('Alice', 'Bob')
 ```
 
@@ -84,21 +84,28 @@ WHERE name IN ('Alice', 'Bob')
 
 - both sides are inclusive
 
-```sql
+```mysql
 WHERE id BETWEEN 100 AND 200
 ```
 
-- dates must be explicitly cast
+### Dates
 
-```sql
+```mysql
+WHERE date(created_at) = '2022-12-25'
+```
+
+- if the date column has an index
+
+```mysql
 WHERE
-	created_at BETWEEN CAST('2022-01-01' AS DATE)
-	AND CAST('2022-01-31' AS DATE)
+    created_at >= '2022-12-25'
+AND
+    created_at < '2022-12-26'
 ```
 
 ## UPDATE
 
-```sql
+```mysql
 UPDATE
     albums a
 SET
@@ -112,7 +119,7 @@ WHERE
 - lets you store temporary results that you can refer to later
 - MySQL does not let you combine UPDATE and LIMIT, this can be used to get around that
 
-```sql
+```mysql
 WITH ids AS (
     SELECT
         a.id
@@ -136,7 +143,7 @@ WHERE
 - like switch statements
     - no fallthrough
 
-```sql
+```mysql
 SELECT
     a.name,
     CASE
@@ -148,7 +155,7 @@ FROM
     albums a
 ```
 
-```sql
+```mysql
 UPDATE
     albums a
 SET
@@ -163,7 +170,7 @@ SET
 
 - prints a table's schema
 
-```sql
+```mysql
 DESCRIBE database.users
 ```
 
@@ -171,7 +178,7 @@ DESCRIBE database.users
 
 - running scripts in a transaction lets you test & roll back changes
 
-```sql
+```mysql
 START TRANSACTION;
 
 -- destructive code goes here - don't forget a semicolon at the end
@@ -186,7 +193,7 @@ ROLLBACK;
 
 # SQL mode
 
-```sql
+```mysql
 -- get
 SELECT @@GLOBAL.sql_mode;
 
