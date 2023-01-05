@@ -15,6 +15,16 @@ const [name, age] = person
 - interfaces can have fields [[#Declaration merging|added to them after creation]], types can't
 - interface names show up in error messages more consistently
 
+# Allow only certain values in an array
+
+```ts
+type Fruit = ['apple', 'banana', 'orange'] as const
+const fruit: Fruit = []
+
+fruit.push('apple')
+fruit.push('carrot') // error
+```
+
 # Type Manipulation
 
 ## Intersection types
@@ -131,13 +141,7 @@ interface Person {
 type PersonFields = keyof Person
 ```
 
-## Pick properties of `T`, omitting properties of `BaseModel`
-
-```ts
-type ModelFields<T> = Omit<T, keyof BaseModel>
-```
-
-## Get union type from array values
+## Union type from array values
 
 ```ts
 const animals = ['cat', 'dog', 'mouse'] as const
@@ -148,7 +152,7 @@ type Animal = typeof animals[number]
 type Dog = typeof animals[1]
 ```
 
-## Get union type from property in array of objects
+## Union type from property in array of objects
 
 ```ts
 const animals = [
@@ -159,6 +163,12 @@ const animals = [
 
 // 'cat' | 'dog' | 'mouse'
 type Animal = typeof animals[number]['species']
+```
+
+## Pick properties of `T`, omitting properties of `BaseModel`
+
+```ts
+type ModelFields<T> = Omit<T, keyof BaseModel>
 ```
 
 ## Pick all properties of type `Value` from `T`
