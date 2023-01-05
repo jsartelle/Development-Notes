@@ -45,7 +45,7 @@ div:has(> span) {
 
 # Properties
 
-## Gap
+## gap
 
 - sets spacing between rows and columns in flex or grid views
 
@@ -53,6 +53,14 @@ div:has(> span) {
 /* first value is gap between rows, second is gap between columns */
 /* if only one value is given, it applies to both */
 gap: 10px 5px;
+```
+
+## animation (shorthand)
+
+**duration** | **easing-function** | **delay** | **iteration-count** | **direction** | **fill-mode** | **play-state** | **name**
+
+```css
+animation: 3s ease-in 1s infinite reverse both running slidein;
 ```
 
 # Other
@@ -71,14 +79,6 @@ gap: 10px 5px;
 | 800   | Extra Bold (Ultra Bold)   |
 | 900   | Black (Heavy)             |
 | 950   | Extra Black (Ultra Black) |
-
-# Animation shorthand
-
-**duration** | **easing-function** | **delay** | **iteration-count** | **direction** | **fill-mode** | **play-state** | **name**
-
-```css
-animation: 3s ease-in 1s infinite reverse both running slidein;
-```
 
 # See also
 
